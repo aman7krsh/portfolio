@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aman Sharma Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li class="projects-link"><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Aman Sharma</span></h1>
+      <p>Software Developer @ Samsung (SSIR) | Ex-Cisco Systems<br>M.Tech (SPCOM) IIT Kanpur</p>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/aman-kumar-sharma-2ab9b31b8" target="_blank" class="social-btn linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/aman7krsh" target="_blank" class="social-btn github" title="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="1.png" alt="Aman Sharma">
+    </div>
+  </div>
+</header>
+
+<script src="particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 80 },
+    "color": { "value": "#ffffff" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.5 },
+    "size": { "value": 3 },
+    "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+    "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "bounce" }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": { 
+      "onhover": { "enable": true, "mode": "repulse" }, 
+      "onclick": { "enable": true, "mode": "push" } 
+    },
+    "modes": { "repulse": { "distance": 100 } }
+  },
+  "retina_detect": true
+});
+</script>
+
+</body>
+</html>
+
