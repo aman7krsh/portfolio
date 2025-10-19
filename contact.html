@@ -3,59 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <title>Contact - Aman Sharma</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ===== PARTICLES BACKGROUND ===== */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    body > *:not(#particles-js) {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: red;
+    }
+
+    nav a.active {
+      color: red;
+    }
+
+    /* ===== CONTACT CONTAINER (GLASS STYLE LIKE ABOUT PAGE) ===== */
+    .contact-container {
+      max-width: 500px;
+      margin: 80px auto 60px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 25px rgba(0, 198, 255, 0.2);
+      animation: fadeInUp 0.9s ease-in-out;
+    }
+
+    .contact-container h2 {
+      text-align: center;
+      font-size: 2.2em;
+      color: #00c6ff;
+      margin-bottom: 25px;
+      border-bottom: 2px solid #00c6ff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* ===== FORM ELEMENTS ===== */
+    form {
+      margin-top: 20px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 12px rgba(0, 198, 255, 0.4);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #00c6ff;
+      color: white;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background: #009fe3;
+      box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+    }
+
+    /* ===== THANK YOU MESSAGE ===== */
+    .thank-you {
+      text-align: center;
+      margin-top: 15px;
+      color: #2ecc71;
+      font-size: 16px;
+      display: none;
+    }
+
+    /* ===== ANIMATION ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 768px) {
+      .contact-container {
+        width: 90%;
+        padding: 30px;
+      }
+      nav {
+        gap: 15px;
+      }
+    }
+
+  </style>
 </head>
 <body>
 
-<div id="particles-js"></div>
+  <!-- PARTICLES BACKGROUND -->
+  <div id="particles-js"></div>
 
-<nav class="navbar">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="skills.html">Skills</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
-  </ul>
-</nav>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
 
-<section class="contact-page">
-  <div class="contact-wrapper">
-    <h1>Contact Me</h1>
-    <form action="send_mail.php" method="POST" id="contact-form">
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" placeholder="Enter your email" required>
-      </div>
-      <div class="form-group">
-        <label>Subject</label>
-        <input type="text" name="subject" placeholder="Enter subject" required>
-      </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea name="message" rows="6" placeholder="Write your message here" required></textarea>
-      </div>
+  <!-- CONTACT FORM -->
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <form id="contactForm" action="https://formspree.io/f/mblzbkqy" method="POST">
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
+    <div class="thank-you" id="thankYouMsg">Thanks! Your message has been sent.</div>
   </div>
-</section>
 
-<script src="particles.min.js"></script>
-<script>
-particlesJS("particles-js", {
-  "particles": { "number": { "value": 50 }, "color": { "value": "#ffffff" },
-  "shape": { "type": "polygon", "polygon": { "nb_sides": 6 } },
-  "opacity": { "value": 0.5 }, "size": { "value": 3 },
-  "line_linked": { "enable": true, "distance": 150, "color": "#ffffff",
-  "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 2,
-  "direction": "none", "out_mode": "bounce" } },
-  "interactivity": { "detect_on": "canvas",
-  "events": { "onhover": { "enable": true, "mode": "repulse" },
-  "onclick": { "enable": true, "mode": "push" } },
-  "modes": { "repulse": { "distance": 100 } } },
-  "retina_detect": true
-});
-</script>
+  <!-- PARTICLES JS CONFIG -->
+  <script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 70 },
+      "color": { "value": "#ffffff" },
+      "shape": { "type": "polygon" },
+      "opacity": { "value": 0.5 },
+      "size": { "value": 3 },
+      "line_linked": { 
+        "enable": true,
+        "distance": 150,
+        "color": "#00c6ff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": { 
+        "enable": true,
+        "speed": 2,
+        "out_mode": "bounce"
+      }
+    },
+    "interactivity": {
+      "events": { 
+        "onhover": { "enable": true, "mode": "repulse" },
+        "onclick": { "enable": true, "mode": "push" } 
+      },
+      "modes": { "repulse": { "distance": 100 } }
+    },
+    "retina_detect": true
+  });
+  </script>
+
+  <!-- FORM SUBMIT HANDLER -->
+  <script>
+  const form = document.getElementById('contactForm');
+  const thankYou = document.getElementById('thankYouMsg');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        thankYou.style.display = 'block';
+      } else {
+        alert("Oops! There was a problem submitting your form");
+      }
+    }).catch(() => alert("Oops! There was a problem submitting your form"));
+  });
+  </script>
 
 </body>
 </html>
