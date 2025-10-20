@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Skills - Aman Sharma</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -16,49 +17,7 @@
       overflow-x: hidden;
     }
 
-    /* ===== Navbar ===== */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-      background: rgba(0,0,0,0.85);
-      text-align: center;
-      padding: 15px 0;
-    }
-
-    .navbar ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .navbar li {
-      display: inline-block;
-      margin: 0 25px;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      font-size: 1.3em;
-      color: white;
-      transition: 0.3s;
-      padding: 5px 10px;
-    }
-
-    /* Only non-active links turn blue on hover */
-    .navbar a:not(.active):hover {
-      color: #ff2d2d !important;
-      font-weight: bold;
-    }
-
-    /* Active link stays red even on hover */
-    .navbar a.active {
-      color: #ff2d2d !important;
-      font-weight: bold;
-    }
-
-    /* ===== Particles ===== */
+    /* ===== Particles (Kept for local styles) ===== */
     #particles-js {
       position: fixed;
       width: 100%;
@@ -141,7 +100,6 @@
     @media screen and (max-width: 768px) {
       section.content { margin-top: 100px; }
       .skills-grid { grid-template-columns: 1fr; }
-      .navbar li { margin: 0 10px; }
     }
   </style>
 </head>
@@ -149,7 +107,6 @@
 
 <div id="particles-js"></div>
 
-<!-- Navbar -->
 <nav class="navbar">
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -162,7 +119,6 @@
 
 <section class="content">
 
-  <!-- Technical Skills -->
   <h2 class="section-subheading">Technical Skills</h2>
   <div class="skills-grid">
     <div class="skill-card">
@@ -179,16 +135,15 @@
     </div>
   </div>
 
-  <!-- Expertise Areas -->
   <h2 class="section-subheading">Expertise Areas</h2>
   <div class="skills-grid">
     <div class="skill-card">
       <h3><i class="fas fa-brain"></i>Signal Processing & Communication</h3>
-      <p>Signal Processing, Communication Systems, 5G/4G PHY, Embedded Software</p>
+      <p>Signal Processing, Computer Networks, Communication Systems, 5G/4G PHY</p>
     </div>
     <div class="skill-card">
       <h3><i class="fas fa-robot"></i>AI & Deep Learning</h3>
-      <p>Deep Learning, Neural Networks, Tensor Optimization, High-Performance Computing</p>
+      <p>Machine Learning, Deep Learning (Neural Networks), Large Language Models (LLMs), Tensor Optimization,  High-Performance Computing</p>
     </div>
   </div>
 </section>
@@ -232,4 +187,3 @@ faders.forEach(fader => appearOnScroll.observe(fader));
 
 </body>
 </html>
-

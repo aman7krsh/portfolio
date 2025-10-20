@@ -12,7 +12,6 @@
       font-family: "Poppins", sans-serif;
     }
 
-    /* Container */
     .about-container {
       position: relative;
       z-index: 2;
@@ -26,7 +25,6 @@
       animation: fadeInUp 0.9s ease-in-out;
     }
 
-    /* Section Header */
     .section-header {
       text-align: center;
       font-size: 2.2em;
@@ -38,7 +36,6 @@
       padding-bottom: 5px;
     }
 
-    /* About Content */
     .about-content p {
       color: #ddd;
       font-size: 1.1em;
@@ -47,29 +44,40 @@
       text-align: justify;
     }
 
-    /* Add vertical spacing after About Me section */
-    #about {
-      margin-bottom: 60px;
-    }
-
     .about-links {
       text-align: center;
       margin-top: 25px;
     }
 
-    .about-links a {
+    .links-text a {
       color: #00c6ff;
       text-decoration: none;
       font-weight: bold;
       margin: 0 10px;
+      position: relative;
       transition: color 0.3s ease;
     }
 
-    .about-links a:hover {
-      color: #ff2d2d;
+    .links-text a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -3px;
+      background-color: #00c6ff;
+      transition: width 0.3s ease;
+      border-radius: 2px;
     }
 
-    /* Mini Navbar for sections */
+    .links-text a:hover {
+      color: #fff;
+    }
+
+    .links-text a:hover::after {
+      width: 100%;
+    }
+
     .subnav {
       text-align: center;
       margin-bottom: 40px;
@@ -89,7 +97,6 @@
       text-shadow: 0 0 10px #00c6ff;
     }
 
-    /* Timeline Styles */
     .timeline {
       position: relative;
       margin: 50px auto;
@@ -110,7 +117,7 @@
 
     .timeline-item {
       position: relative;
-      margin-bottom: 50px; /* Increased spacing between timeline items */
+      margin-bottom: 50px;
     }
 
     .timeline-item::before {
@@ -162,37 +169,31 @@
       line-height: 1.6;
     }
 
-    /* Animation */
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media screen and (max-width: 768px) {
-      .timeline {
-        padding-left: 20px;
-      }
-      .timeline::before {
-        left: 10px;
-      }
-      .timeline-item::before {
-        left: 3px;
-      }
+      .timeline { padding-left: 20px; }
+      .timeline::before { left: 10px; }
+      .timeline-item::before { left: 3px; }
+    }
+
+    /* ===== PDF Embed Styles ===== */
+    .resume-embed {
+      width: 100%;
+      height: 600px;
+      border: 2px solid #00c6ff;
+      border-radius: 10px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-<!-- Particle Background -->
 <div id="particles-js"></div>
 
-<!-- Navigation -->
 <nav class="navbar">
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -203,17 +204,16 @@
   </ul>
 </nav>
 
-<!-- About Page Container -->
 <div class="about-container">
 
-  <!-- Sub Navigation -->
   <div class="subnav">
     <a href="#about" class="active">About Me</a> |
     <a href="#experience">Experience</a> |
-    <a href="#education">Education</a>
+    <a href="#education">Education</a> |
+    <a href="#resume-section">Resume</a>
   </div>
 
-  <!-- About Me -->
+  <!-- About Me Section -->
   <section id="about">
     <h1 class="section-header">About Me</h1>
     <div class="about-content">
@@ -221,62 +221,54 @@
       <p>
         I’m passionate about pushing the limits of <strong>AI efficiency on edge devices</strong>.
         At <strong>Samsung Semiconductor India Research</strong>, I’m currently working on
-        <strong>Gemini Nano graph optimization</strong> — bringing <strong>Large Language Models (LLMs)</strong>
-        to life on <strong>mobile hardware</strong>. My work focuses on making neural networks
-        <strong>faster, lighter, and smarter</strong> through advanced <strong>graph-level optimizations</strong>
-        and <strong>NPU-aware quantization</strong>.
+        <strong>Gemini Nano graph optimization</strong> — bringing <strong>LLMs</strong> to life on <strong>mobile hardware</strong>.
       </p>
       <p>
         Previously at <strong>Cisco Systems</strong>, I designed <strong>Ethernet PHY debuggability features</strong>
-        and developed <strong>AI-powered anomaly detection</strong> for high-performance network systems.
+        and developed <strong>AI-powered anomaly detection</strong>.
       </p>
       <p>
-        With deep experience in <strong>C++ performance engineering, neural network compilation,</strong>
-        and <strong>embedded AI</strong>, I love turning complex algorithms into real-world, high-speed intelligence.
+        With deep experience in <strong>C++ performance engineering</strong>, <strong>neural network optimization</strong>,
+        and <strong>AI accelerators</strong>, I love turning complex algorithms into real-world, high-speed intelligence.
       </p>
-
       <div class="about-links">
-        For more info on my <a href="https://github.com/aman7krsh" target="_blank">open-source projects</a>,
-        feel free to visit my GitHub.<br>
-        You can always find my
-        <a href="https://yourusername.github.io/Aman_Sharma_Resume.pdf" target="_blank">latest resume here</a>.
+        <p class="links-text">
+          See more of my work on <a href="https://github.com/aman7krsh" target="_blank">GitHub</a>.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
+  <!-- Experience Section -->
   <section id="experience">
     <h1 class="section-header">Experience</h1>
     <div class="timeline">
-
       <div class="timeline-item">
         <div class="timeline-content">
           <h3>Samsung Semiconductor India Research (SSIR) — Associate Staff Engineer</h3>
           <span>Bangalore, India | Nov 2023 – Present</span>
           <ul>
-            <li>Working on <strong>Gemini Nano graph optimization</strong> — enabling LLMs for mobile hardware.</li>
-            <li>Developed SDK toolchains for <strong>Exynos NPU</strong> model compilation and quantization.</li>
-            <li>Implemented <strong>hardware-dependent graph optimizations</strong> for performance and efficiency.</li>
+            <li>Optimized <strong>Gemini Nano</strong> for faster, low-latency AI inference.</li>
+            <li>Converted <strong>TFLite/ONNX</strong> models to Exynos NPU format.</li>
+            <li>Quantized models to <strong>INT8</strong> or <strong>Float16</strong>.</li>
           </ul>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="timeline-content">
           <h3>Cisco Systems — SDE II</h3>
           <span>Bangalore, India | Aug 2020 – Nov 2023</span>
           <ul>
-            <li>Developed Ethernet PHY (MAC & PHY layer) debuggability features for IOS XR.</li>
-            <li>Designed and automated <strong>LSTM-based anomaly detection</strong> for NCS1010 platforms.</li>
-            <li>Built CLI interfaces and APIs for PHY configurations and diagnostics.</li>
+            <li>Developed Ethernet PHY (MAC & PHY) debuggability features.</li>
+            <li>Automated <strong>LSTM-based anomaly detection</strong>.</li>
+            <li>Built CLI interfaces and APIs for PHY diagnostics.</li>
           </ul>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Education -->
+  <!-- Education Section -->
   <section id="education">
     <h1 class="section-header">Education</h1>
     <div class="timeline">
@@ -286,7 +278,6 @@
           <span>M.Tech in Signal Processing, Communication & Networks (2018 – 2020)</span>
         </div>
       </div>
-
       <div class="timeline-item">
         <div class="timeline-content">
           <h3>Institute of Engineering and Technology (IET) Lucknow</h3>
@@ -296,9 +287,24 @@
     </div>
   </section>
 
+  <!-- Resume Section -->
+  <section id="resume-section">
+    <h1 class="section-header">Resume</h1>
+    <p class="about-links links-text" style="text-align:center; margin-bottom:15px;">
+      <a href="https://drive.google.com/file/d/13hgDAnilQklRIuTiFJ__i_jzLXJ8t9tN/preview" target="_blank">
+        Open Resume in New Tab
+      </a>
+    </p>
+    <iframe 
+      class="resume-embed"
+      src="https://drive.google.com/file/d/13hgDAnilQklRIuTiFJ__i_jzLXJ8t9tN/preview"
+      allow="autoplay"
+      allowfullscreen>
+    </iframe>
+  </section>
+
 </div>
 
-<!-- Particles JS -->
 <script src="particles.min.js"></script>
 <script>
 particlesJS("particles-js", {

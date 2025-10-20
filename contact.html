@@ -3,81 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Contact - Aman Sharma</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-    /* ===== RESET & BASE ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    /* ===== PARTICLES BACKGROUND ===== */
-    #particles-js {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-
-    body > *:not(#particles-js) {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ===== NAVBAR ===== */
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      padding: 20px 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(6px);
-      z-index: 10;
-    }
-
-    nav a {
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: red;
-    }
-
-    nav a.active {
-      color: red;
-    }
-
-    /* ===== CONTACT CONTAINER (GLASS STYLE LIKE ABOUT PAGE) ===== */
+    /* ===== CONTACT CONTAINER (GLASS STYLE) ===== */
     .contact-container {
       max-width: 500px;
-      margin: 80px auto 60px auto;
-      padding: 30px;
+      margin: 120px auto 60px auto; /* leave space for fixed navbar */
+      padding: 35px;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 15px;
       backdrop-filter: blur(8px);
       box-shadow: 0 0 25px rgba(0, 198, 255, 0.2);
       animation: fadeInUp 0.9s ease-in-out;
+      position: relative;
+      z-index: 2;
     }
 
     .contact-container h2 {
@@ -148,33 +91,29 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* ===== RESPONSIVE ===== */
     @media screen and (max-width: 768px) {
       .contact-container {
         width: 90%;
-        padding: 30px;
-      }
-      nav {
-        gap: 15px;
+        margin-top: 100px;
       }
     }
-
   </style>
 </head>
 <body>
 
-  <!-- PARTICLES BACKGROUND -->
   <div id="particles-js"></div>
 
-  <!-- NAVBAR -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="skills.html">Skills</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html" class="active">Contact</a>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- CONTACT FORM -->
   <div class="contact-container">
     <h2>Contact Me</h2>
     <form id="contactForm" action="https://formspree.io/f/mblzbkqy" method="POST">
@@ -186,7 +125,6 @@
     <div class="thank-you" id="thankYouMsg">Thanks! Your message has been sent.</div>
   </div>
 
-  <!-- PARTICLES JS CONFIG -->
   <script>
   particlesJS("particles-js", {
     "particles": {
@@ -219,7 +157,6 @@
   });
   </script>
 
-  <!-- FORM SUBMIT HANDLER -->
   <script>
   const form = document.getElementById('contactForm');
   const thankYou = document.getElementById('thankYouMsg');
@@ -244,4 +181,3 @@
 
 </body>
 </html>
-

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Projects - Aman Sharma</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -15,23 +16,6 @@
       padding: 0;
       overflow-x: hidden;
     }
-
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-      background: rgba(0,0,0,0.85);
-      text-align: center;
-      padding: 15px 0;
-    }
-
-    .navbar ul { list-style: none; margin: 0; padding: 0; }
-    .navbar li { display: inline-block; margin: 0 25px; }
-    .navbar a { text-decoration: none; font-size: 1.3em; color: white; transition: 0.3s; padding: 5px 10px; }
-    .navbar a:hover { color: #ff2d2d ; font-weight: bold; }
-    .navbar a.active { color: #ff2d2d; font-weight: bold; }
 
     /* Particles */
     #particles-js { position: fixed; top:0; left:0; width:100%; height:100%; z-index:0; background:#000; }
@@ -80,9 +64,26 @@
       box-shadow: 0 0 25px rgba(0, 198, 255, 0.3);
     }
 
-    .project-card h3, .publication-card h3 { color: #00c6ff; margin-bottom:10px; font-size:1.2em; }
-    .project-card .project-date { color: #bbb; font-size:0.9em; margin-left:5px; }
-    .project-card p, .publication-card p { color:#ddd; line-height:1.6; }
+    .project-card h3, .publication-card h3 {
+      color: #00c6ff;
+      margin-bottom: 8px;
+      font-size: 1.2em;
+    }
+
+    /* ✅ Always make date appear on a new line */
+    .project-date {
+      display: block;
+      margin-top: 4px;
+      color: #bbb;
+      font-size: 0.9em;
+      letter-spacing: 0.2px;
+    }
+
+    .project-card p, .publication-card p { 
+      color: #ddd;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
 
     .publication-card a {
       display:inline-block;
@@ -95,6 +96,7 @@
       transition:0.3s;
       font-weight:bold;
     }
+
     .publication-card a:hover { background:#00c6ff; color:#000; }
 
     /* Scroll fade-in animation */
@@ -123,24 +125,39 @@
 
   <div class="projects-grid">
     <div class="project-card">
-      <h3>Matrix Completion using Netflix Movie Data <span class="project-date">Nov 2021</span></h3>
-      <p>Implemented collaborative filtering techniques to predict missing entries.</p>
+      <h3>Matrix Completion using Netflix Movie Data</h3>
+      <span class="project-date">📅 Jan 2019 – Apr 2019</span>
+      <p>Implemented collaborative filtering and matrix/probabilistic factorization for movie recommendations.</p>
     </div>
     <div class="project-card">
-      <h3>Speech Enhancement using Deep Neural Network (DNN) <span class="project-date">Jul 2021</span></h3>
-      <p>Designed DNN models to improve audio quality in noisy environments.</p>
+      <h3>Speech Enhancement using Deep Neural Network (DNN)</h3>
+      <span class="project-date">📅 Jan 2019 – Apr 2019</span>
+      <p>Developed DNN-based speech enhancement model to reduce noise and improve audio clarity.</p>
     </div>
     <div class="project-card">
-      <h3>4G-LTE and 5G-NR Transceiver Chain <span class="project-date">Mar 2021</span></h3>
-      <p>Designed and implemented physical layer transceiver for simulation and testing.</p>
+      <h3>4G-LTE and 5G-NR Transceiver Chain</h3>
+      <span class="project-date">📅 Jan 2019 – Apr 2019</span>
+      <p>Designed and implemented 4G-LTE and 5G-NR physical layer transceiver for simulation, testing, and performance evaluation.</p>
     </div>
     <div class="project-card">
-      <h3>Channel Feedback using Bayesian Compressive Sensing <span class="project-date">May 2021</span></h3>
-      <p>Applied compressive sensing for mmWave massive MIMO channel estimation.</p>
+      <h3>Channel Feedback using Bayesian Compressive Sensing</h3>
+      <span class="project-date">📅 July 2018 – Nov 2018</span>
+      <p>Implemented Bayesian compressive sensing for efficient mmWave massive MIMO channel estimation and feedback.</p>
     </div>
     <div class="project-card">
-      <h3>High-Speed Adder using QSD Number System in VHDL <span class="project-date">Jan 2021</span></h3>
-      <p>Developed VHDL design for efficient high-speed arithmetic operation.</p>
+      <h3>High-Speed Adder using QSD Number System in VHDL</h3>
+      <span class="project-date">📅 Jan 2018 – Apr 2018</span>
+      <p>Designed a high-speed adder in VHDL using QSD number system for efficient arithmetic operations.</p>
+    </div>
+    <div class="project-card">
+      <h3>FM Receiver & Low-Power FM Transmitter</h3>
+      <span class="project-date">📅 Dec 2016 – Jan 2017</span>
+      <p>Built an FM receiver and low-power transmitter to demonstrate wireless audio communication.</p>
+    </div>
+    <div class="project-card">
+      <h3>Autonomous Line Follower & Maze Solver Robot</h3>
+      <span class="project-date">📅 July 2015 – Aug 2015</span>
+      <p>Developed a logic gate–based line follower robot with anti-fall feature and an Arduino-based maze solver robot for reliable navigation.</p>
     </div>
   </div>
 
@@ -173,7 +190,6 @@ particlesJS("particles-js", {
   "retina_detect": true
 });
 
-// Scroll fade-in animation
 const faders = document.querySelectorAll('.project-card, .publication-card, .section-heading, #main-heading');
 const appearOptions = { threshold: 0.2 };
 const appearOnScroll = new IntersectionObserver((entries, observer) => {

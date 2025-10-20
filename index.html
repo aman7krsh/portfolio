@@ -2,146 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aman Sharma Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(6px);
-      display: flex;
-      justify-content: center;
-      padding: 20px 0;
-      z-index: 10;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-
-    .navbar a {
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-
-    .navbar a:hover,
-    .navbar a.active {
-      color: red;
-    }
-
-    /* Hero section */
-    .hero {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      padding-top: 60px;
-      gap: 50px;
-    }
-
-    .hero-text h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-
-    .hero-text h1 span {
-      color: #ff2d2d;
-    }
-
-    .hero-text p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-
-    .hero-image img {
-      max-width: 300px;
-      border-radius: 15px;
-      border: 3px solid #00c6ff;
-      box-shadow: 0 0 20px rgba(0,198,255,0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .hero-image img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 35px rgba(0,198,255,0.7);
-    }
-
-    /* Social links */
-    .social-links {
-      margin-top: 20px;
-      display: flex;
-      gap: 20px;
-    }
-
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: rgba(0,198,255,0.1);
-      color: #00c6ff;
-      font-size: 28px;
-      box-shadow: 0 0 10px rgba(0,198,255,0.2);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      perspective: 1000px; /* for 3D effect */
-    }
-
-    /* 3D hover effect */
-    .social-links a.linkedin:hover {
-      background: #0077b5;
-      color: #fff;
-      transform: rotateX(15deg) rotateY(-15deg) scale(1.15);
-      box-shadow: 0 15px 30px rgba(0,119,181,0.6);
-    }
-
-    .social-links a.github:hover {
-      background: #333;
-      color: #fff;
-      transform: rotateX(15deg) rotateY(15deg) scale(1.15);
-      box-shadow: 0 15px 30px rgba(51,51,51,0.6);
-    }
-
-    @media screen and (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-      }
-      .hero-image img {
-        max-width: 200px;
-      }
-      .social-links {
-        justify-content: center;
-      }
-    }
   </style>
 </head>
 <body>
 
 <div id="particles-js"></div>
 
+<!-- Navbar -->
 <nav class="navbar">
   <ul>
     <li><a href="index.html" class="active">Home</a></li>
@@ -152,6 +25,7 @@
   </ul>
 </nav>
 
+<!-- Hero Section -->
 <header class="hero">
   <div class="hero-text">
     <h1>Hi, I'm <span>Aman Sharma</span></h1>
