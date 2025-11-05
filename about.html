@@ -99,7 +99,7 @@
 
     .timeline {
       position: relative;
-      margin: 50px auto;
+      margin: 60px auto;
       padding-left: 40px;
       max-width: 850px;
     }
@@ -179,14 +179,9 @@
       .timeline::before { left: 10px; }
       .timeline-item::before { left: 3px; }
     }
-
-    /* ===== PDF Embed Styles ===== */
-    .resume-embed {
-      width: 100%;
-      height: 600px;
-      border: 2px solid #00c6ff;
-      border-radius: 10px;
-      margin-top: 20px;
+    /* ===== Extra vertical spacing between sections ===== */
+    section {
+      margin-top: 80px; /* Adjust: 60px (tighter) → 100px (more airy) */
     }
   </style>
 </head>
@@ -209,31 +204,25 @@
   <div class="subnav">
     <a href="#about" class="active">About Me</a> |
     <a href="#experience">Experience</a> |
-    <a href="#education">Education</a> |
-    <a href="#resume-section">Resume</a>
+    <a href="#education">Education</a>
   </div>
 
   <!-- About Me Section -->
   <section id="about">
     <h1 class="section-header">About Me</h1>
     <div class="about-content">
-      <p>Hello, and thanks for visiting my webpage! 👋</p>
-      <p>
-        I’m passionate about pushing the limits of <strong>AI efficiency on edge devices</strong>.
-        At <strong>Samsung Semiconductor India Research</strong>, I’m currently working on
-        <strong>Gemini Nano graph optimization</strong> — bringing <strong>LLMs</strong> to life on <strong>mobile hardware</strong>.
-      </p>
-      <p>
-        Previously at <strong>Cisco Systems</strong>, I designed <strong>Ethernet PHY debuggability features</strong>
-        and developed <strong>AI-powered anomaly detection</strong>.
-      </p>
-      <p>
-        With deep experience in <strong>C++ performance engineering</strong>, <strong>neural network optimization</strong>,
-        and <strong>AI accelerators</strong>, I love turning complex algorithms into real-world, high-speed intelligence.
-      </p>
+     <p>Hello, and thanks for visiting my website! 👋</p>
+      <p>I’m a <strong>C++ Software Developer</strong> with over 5 years of industry experience. I completed my postgraduate studies at <strong>IIT Kanpur</strong>, specializing in <strong>Signal Processing, Communication, and Networks (SPCOM)</strong>.</p>
+      
+      <p>Currently, I work in the domain of <strong>AI accelerators (Exynos NPU)</strong>, optimizing <strong>LLM</strong> and <strong>computer vision models</strong> to run efficiently on <strong>mobile hardware</strong>.</p>
+      
+      <p>Outside of work, I enjoy exploring <strong>quantitative research</strong> and <strong>low-latency systems</strong>.</p>
+      
       <div class="about-links">
         <p class="links-text">
-          See more of my work on <a href="https://github.com/aman7krsh" target="_blank">GitHub</a>.
+          For more details, feel free to explore my open-source projects on 👉
+          <a href="https://github.com/aman7krsh" target="_blank">GitHub</a> or check out my latest
+          <a href="https://drive.google.com/file/d/13hgDAnilQklRIuTiFJ__i_jzLXJ8t9tN/view" target="_blank">resume</a>.
         </p>
       </div>
     </div>
@@ -248,9 +237,9 @@
           <h3>Samsung Semiconductor India Research (SSIR) — Associate Staff Engineer</h3>
           <span>Bangalore, India | Nov 2023 – Present</span>
           <ul>
-            <li>Optimized <strong>Gemini Nano</strong> for faster, low-latency AI inference.</li>
-            <li>Converted <strong>TFLite/ONNX</strong> models to Exynos NPU format.</li>
-            <li>Quantized models to <strong>INT8</strong> or <strong>Float16</strong>.</li>
+            <li>Optimized <strong>Gemini Nano</strong> for faster, low-latency AI inference on mobile hardware.</li>
+            <li>Enabled seamless conversion of <strong>TFLite/ONNX</strong> models to Exynos NPU format.</li>
+            <li>Quantized <strong>TFLite/ONNX</strong> models to <strong>Int8</strong>/<strong>Float16</strong>.</li>
           </ul>
         </div>
       </div>
@@ -259,8 +248,8 @@
           <h3>Cisco Systems — SDE II</h3>
           <span>Bangalore, India | Aug 2020 – Nov 2023</span>
           <ul>
-            <li>Developed Ethernet PHY (MAC & PHY) debuggability features.</li>
-            <li>Automated <strong>LSTM-based anomaly detection</strong>.</li>
+            <li>Developed Ethernet MAC & PHY debuggability features for the Cisco NCS1010 (IOS XR) platform.</li>
+            <li>Developed <strong>LSTM-based</strong> anomaly detection for the Cisco NCS1010 platform.</li>
             <li>Built CLI interfaces and APIs for PHY diagnostics.</li>
           </ul>
         </div>
@@ -285,22 +274,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Resume Section -->
-  <section id="resume-section">
-    <h1 class="section-header">Resume</h1>
-    <p class="about-links links-text" style="text-align:center; margin-bottom:15px;">
-      <a href="https://drive.google.com/file/d/13hgDAnilQklRIuTiFJ__i_jzLXJ8t9tN/preview" target="_blank">
-        Open Resume in New Tab
-      </a>
-    </p>
-    <iframe 
-      class="resume-embed"
-      src="https://drive.google.com/file/d/13hgDAnilQklRIuTiFJ__i_jzLXJ8t9tN/preview"
-      allow="autoplay"
-      allowfullscreen>
-    </iframe>
   </section>
 
 </div>

@@ -30,45 +30,42 @@ html, body {
 /* =========================
    Navbar
    ========================= */
+/* =========================
+   Navbar (Unified Style)
+   ========================= */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    padding: 20px 0;
-    text-align: center;
-    z-index: 10;
-    backdrop-filter: blur(6px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 20px 0;
+  text-align: center;
+  z-index: 10;
+  backdrop-filter: blur(6px);
 }
 
 .navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
 
 .navbar a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.4em;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
-    padding: 5px 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1em;        /* 🔹 same as Skills page look */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
 }
 
 .navbar a:hover,
 .navbar a.active {
-    color: #ff2d2d;
-    font-weight: bold;
-}
-
-@media screen and (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        gap: 15px;
-    }
+  color: #ff2d2d;          /* 🔥 red glow like Skills page */
+  text-shadow: 0 0 10px rgba(255, 45, 45, 0.7);
+  font-weight: 700;
 }
 
 /* =========================
@@ -76,10 +73,11 @@ html, body {
    ========================= */
 .hero {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding-top: 100px;
+    min-height: calc(100vh - 80px);
+    padding: 120px 20px 60px 20px;
     gap: 50px;
     text-align: left;
     position: relative;
@@ -87,9 +85,15 @@ html, body {
     animation: fadeInUp 0.9s ease-in-out;
 }
 
+.hero-text {
+    max-width: 480px;
+    text-align: left;
+}
+
 .hero-text h1 {
     font-size: 3em;
     margin-bottom: 15px;
+    white-space: nowrap;
 }
 
 .hero-text h1 span {
@@ -103,11 +107,11 @@ html, body {
 }
 
 /* =========================
-   Hexagonal Hero Image
+   Hero Image
    ========================= */
 .hero-image {
-    width: 240px;
-    height: 210px;
+    width: 280px;
+    height: 250px;
     overflow: hidden;
     position: relative;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
@@ -120,7 +124,6 @@ html, body {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 0;
     transition: transform 0.3s ease;
 }
 
@@ -182,63 +185,94 @@ html, body {
 /* =========================
    Responsive
    ========================= */
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        gap: 18px;
+        flex-wrap: wrap; /* ensures navbar items stay together */
+	justify-content: center;
+    }
 
+    .navbar a {
+        font-size: 0.85em;
+        padding: 3px 6px;
+        font-weight: 600;
+	}
 
+    .hero {
+        flex-direction: row;
+        gap: 30px;
+        padding: 100px 15px;
+    }
 
+    .hero-image {
+        width: 160px;
+        height: 140px;
+    }
 
+    .hero-text h1 {
+        font-size: 2em;
+    }
 
+    .hero-text p {
+        font-size: 1.1em;
+    }
 
-
-
-
-
-
-
-/* ===== MOBILE RESPONSIVENESS FIX ===== */
-@media (max-width: 768px) {
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    padding: 140px 24px 60px 24px; /* <— adds visible side space */
-    box-sizing: border-box;
-  }
-
-  .hero-text {
-    width: 100%;
-  }
-
-  .hero-text h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-
-  .hero-text p {
-    font-size: 1.2em;
-    line-height: 1.6;
-  }
-
-  .hero-image {
-    width: 80vw;     /* scales responsively */
-    max-width: 320px;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
+    .social-links a {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
 }
+
+
+
+/* === Fix: Make particles clickable but keep navbar working === */
+#particles-js {
+  pointer-events: auto;
+}
+
+.hero {
+  pointer-events: none; /* allows particle clicks through hero area */
+}
+
+.hero-text,
+.hero-image,
+.social-links,
+.navbar {
+  pointer-events: auto; /* keep all interactive elements clickable */
+}
+
+
+/* ===== GLOBAL PAGE ALIGNMENT FIX ===== */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Ensure consistent top spacing below the fixed navbar */
+body > section,
+body > header.hero,
+body > .contact-container {
+  margin-top: 120px !important;   /* matches hero section spacing */
+}
+
+/* Optional: make sure navbar stays fully fixed and consistent */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 80px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);  /* slight transparency for uniformity */
+  backdrop-filter: blur(8px);
+}
+
+
+/* ===== NAVBAR FONT STYLING ===== */
+.navbar ul li a {
+  font-weight: 600;      /* make it bold (400 = normal, 600 = semi-bold, 700 = bold) */
+  font-size: 1.6em;      /* increase font size a bit */
+  letter-spacing: 0.5px; /* optional: adds a cleaner spacing */
+}
+
 
